@@ -248,14 +248,21 @@ with aba5:
         st.plotly_chart(fig_bat_hist, use_container_width=True)
 
 # --- ABA 6: DATA LAKE ---
+
 with aba6:
     st.markdown("### Data Lake (Base Consolidada)")
     
     def color_tabela(row):
         s = row['Status']
-        if s == 'Grave': return ['background-color: #FADBD8'] * len(row)
-        if s == 'Alerta': return ['background-color: #FDEBD0'] * len(row)
-        if s == 'Suspeito': return ['background-color: #FCF3CF'] * len(row)
+        # Paleta otimizada para Dark Mode: Fundo profundo + Letra viva + Negrito
+        if s == 'Grave': 
+            return ['background-color: #3B1010; color: #FF7675; font-weight: bold; border-bottom: 1px solid #5C1A1A'] * len(row)
+        if s == 'Alerta': 
+            return ['background-color: #3B2500; color: #FDCB6E; font-weight: bold; border-bottom: 1px solid #664100'] * len(row)
+        if s == 'Suspeito': 
+            return ['background-color: #333300; color: #FFEAA7; font-weight: bold; border-bottom: 1px solid #4D4D00'] * len(row)
+        
+        # Para linhas normais, deixa o Streamlit cuidar da cor nativa do Dark Mode
         return [''] * len(row)
         
     st.dataframe(
