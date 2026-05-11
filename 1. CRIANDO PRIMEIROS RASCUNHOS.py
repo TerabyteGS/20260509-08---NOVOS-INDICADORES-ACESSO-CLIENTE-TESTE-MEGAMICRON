@@ -40,7 +40,7 @@ def gerar_dados_totem():
         for i in range(1, qtd + 1):
             maquinas.append({"nome": f"{pref} {i:02d}", "setor": setor, "vib_base": vib, "usa_lub": usa_lub, "tipo_lub": tipo})
 
-    datas = pd.date_range(start=datetime.now() - timedelta(days=5), end=datetime.now(), freq='1H')
+    datas = pd.date_range(start=datetime.now() - timedelta(days=5), end=datetime.now(), freq='1h')
     dados = []
 
     for maq in maquinas:
