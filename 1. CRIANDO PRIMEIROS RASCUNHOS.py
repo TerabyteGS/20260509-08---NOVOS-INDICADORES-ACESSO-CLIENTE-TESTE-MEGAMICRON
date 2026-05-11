@@ -106,7 +106,7 @@ if 'filtro' not in st.session_state: st.session_state.filtro = 'Todos'
 def set_filtro(novo_filtro): st.session_state.filtro = novo_filtro
 
 # --- CABEÇALHO ---
-st.markdown(f"<h1 style='text-align: center; color: {COR_AZUL}; font-size: 3em; margin-bottom: 0;'>🚀 HUB DE CONFIABILIDADE SÍMIC</h1>", unsafe_allow_html=True)
+st.markdown(f"<h1 style='text-align: center; color: {COR_AZUL}; font-size: 3em; margin-bottom: 0;'>HUB DE CONFIABILIDADE SÍMIC</h1>", unsafe_allow_html=True)
 st.markdown(f"<p style='text-align: center; font-size: 1.2em; color: #7F8C8D;'>Monitorando {len(status_atual)} ativos via IA Preditiva | Atualizado em: {datetime.now().strftime('%H:%M:%S')}</p>", unsafe_allow_html=True)
 
 # --- SEMÁFORO INTERATIVO (KPIs VITAIS) ---
